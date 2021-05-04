@@ -1,0 +1,39 @@
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  title:{
+    text: "Average consumption in minutes per day (16-34s)",
+    horizontalAlign: "center"
+  },
+  data: [{
+    type: "doughnut",
+    startAngle: 60,
+    //innerRadius: 60,
+    indexLabelFontSize: 12,
+    indexLabel: "{label} - {y}",
+    toolTipContent: "<b>{label}:</b> {y} minutes",
+    dataPoints: [
+      { y: 27.3, label: "TikTok" },
+      { y: 74, label: "YouTube" },
+      { y: 13.6, label: "Other online video" },
+      { y: 7.7, label: "Adult online video (XXX)"},
+      { y: 5.4, label: "DVD"},
+      { y: 56.8, label: "Subscription VOD"},
+      { y: 107, label: "Broadcast TV"}
+    ]
+  }]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 50%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
